@@ -455,7 +455,7 @@ body.opening-active.opening-reveal #heroBg {
     linear-gradient(180deg, rgba(236,230,218,.035), rgba(236,230,218,.01) 68%),
     rgba(8,8,8,.28);
   width: 100%;
-  max-width: 920px;
+  max-width: 1080px;
   position: relative;
   z-index: 5;
   pointer-events: auto;
@@ -510,6 +510,7 @@ body.opening-active.opening-reveal #heroBg {
 .ch1::before { background: var(--red); }
 .ch2::before { background: var(--gold); }
 .ch3::before { background: rgba(236,230,218,.35); }
+.ch4::before { background: rgba(196,149,78,.78); }
 
 @media (max-height: 920px) {
   .h-hero-content { padding: 30px 0 60px 4.8vw; width: min(60vw, 900px); max-width: 900px; }
@@ -1835,6 +1836,389 @@ body.opening-active.opening-reveal #heroBg {
   font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg2);
 }
 .gi.off { opacity: .04; pointer-events: none; transition: opacity .38s; }
+.gi-credit,
+.fr-credit,
+.retouch-credits {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(236,230,218,.72);
+}
+.gi-credit {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 6;
+  pointer-events: auto;
+  max-width: calc(100% - 28px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(236,230,218,.1);
+  background: rgba(9,8,7,.68);
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+  backdrop-filter: blur(14px);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.gi-credit::before,
+.fr-credit::before,
+.retouch-credits::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: rgba(196,149,78,.88);
+  box-shadow: 0 0 0 1px rgba(236,230,218,.08);
+}
+.fr-credit {
+  margin-top: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  opacity: .82;
+  line-height: 1.3;
+  pointer-events: auto;
+}
+.credit-link,
+.credit-name {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+.credit-link {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(236,230,218,.22);
+  transition: color .25s ease, border-color .25s ease, opacity .25s ease;
+}
+.credit-link:hover {
+  color: rgba(255,244,222,.94);
+  border-color: rgba(196,149,78,.62);
+}
+.credit-link:focus-visible {
+  outline: 1px solid rgba(196,149,78,.46);
+  outline-offset: 2px;
+  border-bottom-color: rgba(196,149,78,.82);
+}
+
+.retouch-intro {
+  display: grid;
+  grid-template-columns: minmax(280px, .88fr) minmax(0, 1.12fr);
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 52px;
+}
+.retouch-intro-copy {
+  display: grid;
+  gap: 18px;
+}
+.retouch-intro-copy p {
+  max-width: 50ch;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--fg2);
+}
+.retouch-guides {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.retouch-guides span,
+.retouch-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(236,230,218,.1);
+  background: rgba(236,230,218,.03);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(236,230,218,.66);
+}
+.retouch-grid {
+  display: grid;
+  gap: 28px;
+}
+.retouch-case {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 26px;
+  border-radius: 28px;
+  border: 1px solid rgba(236,230,218,.08);
+  background:
+    radial-gradient(circle at top right, rgba(196,149,78,.08), transparent 36%),
+    linear-gradient(180deg, rgba(236,230,218,.028), rgba(236,230,218,.012) 56%),
+    rgba(15,13,12,.82);
+  box-shadow:
+    0 24px 56px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(236,230,218,.04);
+}
+.retouch-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+.retouch-copy-head {
+  display: grid;
+  gap: 12px;
+}
+.retouch-copy h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -.03em;
+  line-height: .96;
+  color: var(--fg);
+}
+.retouch-copy p {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(236,230,218,.62);
+}
+.retouch-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.retouch-credits {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.35;
+  flex-wrap: wrap;
+}
+.retouch-compare {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 3 / 2;
+  min-height: 0;
+  justify-self: start;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(236,230,218,.1);
+  background:
+    linear-gradient(180deg, rgba(236,230,218,.02), rgba(236,230,218,.008)),
+    rgba(7,7,7,.9);
+  box-shadow:
+    inset 0 1px 0 rgba(236,230,218,.03),
+    0 20px 50px rgba(0,0,0,.18);
+}
+.retouch-case[data-ratio="portrait"] {
+  grid-template-columns: minmax(280px, 360px) minmax(320px, 430px);
+  justify-content: space-between;
+}
+.retouch-case[data-ratio="portrait"] .retouch-compare {
+  width: min(100%, 430px);
+  max-width: 430px;
+  aspect-ratio: 2 / 3;
+}
+.retouch-case[data-ratio="square"] {
+  grid-template-columns: minmax(280px, 360px) minmax(360px, 520px);
+  justify-content: space-between;
+}
+.retouch-case[data-ratio="square"] .retouch-compare {
+  width: min(100%, 520px);
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+}
+.retouch-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: ew-resize;
+  --split: 50%;
+  --before-filter: none;
+}
+.retouch-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+.retouch-base {
+  filter: var(--before-filter);
+}
+.retouch-final-wrap {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 0 0 var(--split));
+}
+.retouch-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8,8,8,.08), transparent 22%, transparent 72%, rgba(8,8,8,.24)),
+    linear-gradient(90deg, rgba(8,8,8,.18), transparent 26%, transparent 74%, rgba(8,8,8,.12));
+  pointer-events: none;
+  z-index: 2;
+}
+.retouch-label {
+  position: absolute;
+  top: 16px;
+  z-index: 4;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(236,230,218,.1);
+  background: rgba(9,8,7,.64);
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(236,230,218,.82);
+}
+.retouch-label-before { left: 16px; }
+.retouch-label-after { right: 16px; }
+.retouch-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split);
+  width: 1px;
+  transform: translateX(-.5px);
+  background: rgba(236,230,218,.86);
+  box-shadow:
+    0 0 0 1px rgba(9,8,7,.08),
+    0 0 24px rgba(236,230,218,.24);
+  pointer-events: none;
+  z-index: 4;
+}
+.retouch-handle {
+  position: absolute;
+  top: 50%;
+  left: var(--split);
+  z-index: 5;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(236,230,218,.2);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(236,230,218,.18), rgba(236,230,218,.04) 62%),
+    rgba(9,8,7,.78);
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(236,230,218,.08);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.retouch-handle::before {
+  content: '< >';
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(236,230,218,.9);
+}
+.retouch-stage.is-dragging .retouch-handle,
+.retouch-stage:focus-visible .retouch-handle {
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(236,230,218,.1),
+    0 0 0 8px rgba(196,149,78,.08);
+}
+.retouch-stage:focus-visible {
+  outline: none;
+}
+.retouch-stage:focus-visible .retouch-divider {
+  box-shadow:
+    0 0 0 1px rgba(9,8,7,.08),
+    0 0 0 10px rgba(196,149,78,.06),
+    0 0 24px rgba(236,230,218,.24);
+}
+
+@media(max-width:1100px){
+  .retouch-intro{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .retouch-guides{
+    justify-content: flex-start;
+  }
+  .retouch-case{
+    grid-template-columns: 1fr;
+  }
+  .retouch-compare{
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    justify-self: stretch;
+  }
+}
+@media(max-width:760px){
+  .gi-credit{
+    top: 10px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    padding: 6px 9px 6px 10px;
+    font-size: 7px;
+    letter-spacing: .12em;
+  }
+  .fr-credit,
+  .retouch-credits{
+    font-size: 7px;
+    letter-spacing: .12em;
+  }
+  .retouch-case{
+    padding: 18px;
+    gap: 18px;
+    border-radius: 22px;
+  }
+  .retouch-copy h3{
+    font-size: clamp(24px, 8vw, 34px);
+  }
+  .retouch-compare{
+    min-height: 250px;
+    border-radius: 20px;
+  }
+  .retouch-label{
+    top: 12px;
+    min-height: 28px;
+    padding: 6px 9px;
+    font-size: 8px;
+  }
+  .retouch-handle{
+    width: 48px;
+    height: 48px;
+  }
+  .retouch-handle::before{
+    font-size: 9px;
+  }
+}
 
 /* â”€â”€ INTERLUDE â”€â”€ */
 .interlude {
@@ -2055,6 +2439,20 @@ body.opening-active.opening-reveal #heroBg {
   position: absolute; bottom: -34px; left: 0;
   font-family: 'Barlow Condensed', sans-serif; font-weight: 200;
   font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: rgba(236,230,218,.22);
+}
+#lb-cap .credit-link,
+#lb-cap .credit-name {
+  font-family: inherit;
+}
+#lb-cap .credit-link {
+  color: rgba(236,230,218,.48);
+  border-bottom-color: rgba(236,230,218,.18);
+}
+#lb-cap .credit-link:hover {
+  color: rgba(255,244,222,.88);
+}
+.lb-cap-sep {
+  opacity: .4;
 }
 #lb-prev, #lb-next {
   position: fixed; top: 50%; transform: translateY(-50%);
@@ -2797,6 +3195,7 @@ function triggerFlash(cb) {
       <li><button class="active" data-nav-target="home" onclick="goPage('home')">Home</button></li>
       <li><button data-nav-target="moto" onclick="goPage('moto')">Motorsport</button></li>
       <li><button data-nav-target="creative" onclick="goPage('creative')">Creative</button></li>
+      <li><button data-nav-target="retouch" onclick="goPage('retouch')">Retouch</button></li>
       <li><button data-nav-target="auto" onclick="goPage('auto')">Automobile</button></li>
       <li><button class="nav-contact" onclick="gotoS('home-contact')">Contact</button></li>
     </ul>
@@ -2852,6 +3251,11 @@ function triggerFlash(cb) {
           <div class="h-ch-n">03 - Automobile</div>
           <div class="h-ch-title">Form &amp; Detail</div>
           <div class="h-ch-tag">Interiors / Detail / Luxury</div>
+        </button>
+        <button class="h-ch ch4" type="button" onclick="goPage('retouch')">
+          <div class="h-ch-n">04 - Retouch</div>
+          <div class="h-ch-title">Before &amp;<br>Finish</div>
+          <div class="h-ch-tag">Split View / Cleanup / Delivery</div>
         </button>
       </div>
     </div>
@@ -2976,6 +3380,7 @@ function triggerFlash(cb) {
       <li><button data-nav-target="home" onclick="goPage('home')">Home</button></li>
       <li><button class="active" data-nav-target="moto" onclick="goPage('moto')">Motorsport</button></li>
       <li><button data-nav-target="creative" onclick="goPage('creative')">Creative</button></li>
+      <li><button data-nav-target="retouch" onclick="goPage('retouch')">Retouch</button></li>
       <li><button data-nav-target="auto" onclick="goPage('auto')">Automobile</button></li>
       <li><button class="nav-contact" onclick="gotoS('m-contact')">Contact</button></li>
     </ul>
@@ -3060,6 +3465,7 @@ function triggerFlash(cb) {
       <li><button data-nav-target="home" onclick="goPage('home')">Home</button></li>
       <li><button data-nav-target="moto" onclick="goPage('moto')">Motorsport</button></li>
       <li><button class="active" data-nav-target="creative" onclick="goPage('creative')">Creative</button></li>
+      <li><button data-nav-target="retouch" onclick="goPage('retouch')">Retouch</button></li>
       <li><button data-nav-target="auto" onclick="goPage('auto')">Automobile</button></li>
       <li><button class="nav-contact" onclick="gotoS('cr-contact')">Contact</button></li>
     </ul>
@@ -3152,6 +3558,246 @@ function triggerFlash(cb) {
   <footer class="foot" style="background:var(--bg2);"><p>Â© 2025 Ben Clickzz</p><div class="foot-brand">Ben.Clickzz</div><p>Poster &amp; Product Photography</p></footer>
 </div>
 
+<!-- RETOUCH -->
+<div id="retouch" class="page">
+  <nav class="top-nav">
+    <a href="#" class="brand" onclick="goPage('home');return false;">Ben<span class="brand-sep">.</span>Clickzz</a>
+    <ul class="nav-links">
+      <li><button data-nav-target="home" onclick="goPage('home')">Home</button></li>
+      <li><button data-nav-target="moto" onclick="goPage('moto')">Motorsport</button></li>
+      <li><button data-nav-target="creative" onclick="goPage('creative')">Creative</button></li>
+      <li><button class="active" data-nav-target="retouch" onclick="goPage('retouch')">Retouch</button></li>
+      <li><button data-nav-target="auto" onclick="goPage('auto')">Automobile</button></li>
+      <li><button class="nav-contact" onclick="gotoS('rt-contact')">Contact</button></li>
+    </ul>
+  </nav>
+  <div class="pg-hero">
+    <div class="pg-hero-bg" style="background-image:url('./assets/portfolio/retouch/monish-jewelry-after.jpg');filter:brightness(.28) saturate(.86) contrast(1.02);background-position:center;"></div>
+    <div class="pg-hero-ov" style="background:linear-gradient(108deg,rgba(11,10,8,.96) 0%,rgba(11,10,8,.26) 55%,transparent 100%),linear-gradient(to top,rgba(11,10,8,1) 0%,rgba(11,10,8,.42) 42%,transparent 72%);"></div>
+    <div class="pg-hero-c">
+      <div class="pg-tag" style="color:rgba(196,149,78,.2);">Retouch / Product RAW to Final / Collaboration Credits</div>
+      <h1 class="pg-h1" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(54px,9vw,125px);">Raw,<br>Retouch &amp;<br><em style="color:rgba(196,149,78,.4);">Finish</em></h1>
+      <p class="pg-sub" style="font-family:'Cormorant Garamond',serif;">Real product frames shot by Monishwaran and finished by Benihin, presented as direct RAW-to-final comparisons with linked photographer credit.</p>
+      <div class="pg-cta-row"><a class="pg-cta" href="#" onclick="gotoS('rt-work');return false;">Open Retouch Cases</a></div>
+    </div>
+    <div class="pg-scroll"><div class="pg-scroll-line"></div>Scroll</div>
+  </div>
+  <div class="sec" id="rt-work" style="background:var(--bg);">
+    <div class="sec-hd">
+      <div class="sec-kicker rv">Retouch Portfolio</div>
+      <h2 class="sec-h2 rv d1">Product<br><em>Retouch</em></h2>
+    </div>
+    <div class="retouch-intro rv d2">
+      <div class="retouch-intro-copy">
+        <p>These compare blocks use the real RAW captures from Monishwaran and the final edited deliveries by Benihin. The split stays honest now: left side is the original source, right side is the finished retouch.</p>
+        <p>Each case keeps separate photographer and editor credit, so collaborative work can be shown cleanly without losing who shot the frame and who finished it.</p>
+      </div>
+      <div class="retouch-guides">
+        <span>RAW capture</span>
+        <span>Retouch cleanup</span>
+        <span>Photographer credit</span>
+        <span>Final delivery</span>
+      </div>
+    </div>
+    <div class="retouch-grid rv d3">
+      <article class="retouch-case" data-ratio="landscape" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Jewelry / Tone &amp; Contrast Finish</div>
+            <h3>Heritage Jewelry<br><em>Refinement</em></h3>
+            <p>Metal warmth, gemstone separation, and deeper contrast cleanup so the frame reads richer without losing the handmade surface detail.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>Warmth control</span>
+            <span>Texture cleanup</span>
+            <span>Contrast finish</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare jewelry raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-jewelry-before.jpg" alt="Raw jewelry product photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-jewelry-after.jpg" alt="Final jewelry retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+      <article class="retouch-case" data-ratio="portrait" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Watch / Color Direction</div>
+            <h3>Floral Watch<br><em>Cleanup</em></h3>
+            <p>Pastel balance, strap cleanup, and stronger subject focus so the watch holds the scene instead of getting lost inside the props.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>Backdrop control</span>
+            <span>Subject clarity</span>
+            <span>Color direction</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare floral watch raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-floral-watch-before.jpg" alt="Raw floral watch product photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-floral-watch-after.jpg" alt="Final floral watch retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+      <article class="retouch-case" data-ratio="square" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Nail Color / Graphic Finish</div>
+            <h3>Nail Clock<br><em>Balance</em></h3>
+            <p>White cleanup, spacing correction, and graphic placement so the arrangement feels designed instead of just arranged on a plain background.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>White cleanup</span>
+            <span>Scene balance</span>
+            <span>Graphic finish</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare nail color clock raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-nail-clock-before.jpg" alt="Raw nail color product photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-nail-clock-after.jpg" alt="Final nail color retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+      <article class="retouch-case" data-ratio="portrait" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Perfume / Soft Commercial Grade</div>
+            <h3>Rose Perfume<br><em>Polish</em></h3>
+            <p>Fabric tone cleanup, bottle edge refinement, and a softer commercial finish so the pink pack feels premium instead of washed out.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>Label clarity</span>
+            <span>Fabric tone</span>
+            <span>Highlight polish</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare rose perfume raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-rose-perfume-before.jpg" alt="Raw rose perfume product photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-rose-perfume-after.jpg" alt="Final rose perfume retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+      <article class="retouch-case" data-ratio="portrait" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Handbag / Composite Cleanup</div>
+            <h3>Floating Handbag<br><em>Finish</em></h3>
+            <p>Cutout cleanup, object spacing, and neutral background control so the suspended composition feels intentional rather than roughly assembled.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>Cutout cleanup</span>
+            <span>Object spacing</span>
+            <span>Neutral finish</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare floating handbag raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-floating-handbag-before.jpg" alt="Raw floating handbag product photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-floating-handbag-after.jpg" alt="Final floating handbag retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+      <article class="retouch-case" data-ratio="landscape" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Fashion Flatlay / Scene Cleanup</div>
+            <h3>Accessory Flatlay<br><em>Lift</em></h3>
+            <p>Prop cleanup, better tonal balance, and stronger subject hierarchy so the bag and accessories read as one polished retail layout.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>Prop cleanup</span>
+            <span>Scene balance</span>
+            <span>Selective lift</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare fashion flatlay raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-fashion-flatlay-before.jpg" alt="Raw fashion flatlay photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-fashion-flatlay-after.jpg" alt="Final fashion flatlay retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+      <article class="retouch-case" data-ratio="portrait" data-credit-photo="Monishwaran" data-credit-photo-url="https://www.instagram.com/monishwaranphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" data-credit-edit="Benihin">
+        <div class="retouch-copy">
+          <div class="retouch-copy-head">
+            <div class="sec-kicker">Body Wash / Product Pop</div>
+            <h3>Body Wash<br><em>Commercial Lift</em></h3>
+            <p>Bottle separation, white surface cleanup, and tighter saturation control so the product stays crisp even against the bright set colors.</p>
+          </div>
+          <div class="retouch-meta">
+            <span>Bottle pop</span>
+            <span>Surface cleanup</span>
+            <span>Saturation control</span>
+          </div>
+          <div class="retouch-credits"></div>
+        </div>
+        <div class="retouch-compare">
+          <div class="retouch-stage" role="slider" tabindex="0" aria-label="Compare body wash raw capture and final retouch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+            <img class="retouch-base" src="./assets/portfolio/retouch/monish-body-wash-before.jpg" alt="Raw body wash product photograph by Monishwaran before retouch">
+            <div class="retouch-final-wrap">
+              <img class="retouch-final" src="./assets/portfolio/retouch/monish-body-wash-after.jpg" alt="Final body wash retouch edited by Benihin">
+            </div>
+            <span class="retouch-label retouch-label-before">RAW capture</span>
+            <span class="retouch-label retouch-label-after">Final retouch</span>
+            <span class="retouch-divider"></span>
+            <span class="retouch-handle"></span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="contact-sec" id="rt-contact" style="background:var(--bg2);">
+    <div class="rv"><div class="sec-kicker" style="color:var(--fg2);">Retouch Bookings</div><h2 class="sec-h2 contact-ttl">Need the<br><em>finish</em><br>dialed in?</h2></div>
+    <div class="rv d2"><p class="contact-desc">Available for product retouching, cleanup, tonal polish, and collaborative post-production where the photographer credit stays attached to the final presentation.</p><div class="contact-lbl">Email</div><a href="mailto:photographyben6@gmail.com" class="contact-email">photographyben6@gmail.com</a><div class="soc-list"><a href="https://instagram.com/ben_clickzz" target="_blank">@ben_clickzz</a></div></div>
+  </div>
+  <footer class="foot" style="background:var(--bg);"><p>Â© 2025 Ben Clickzz</p><div class="foot-brand">Ben.Clickzz</div><p>Product Retouch</p></footer>
+</div>
+
 <!-- AUTOMOBILE -->
 <div id="auto" class="page">
   <nav class="top-nav">
@@ -3160,6 +3806,7 @@ function triggerFlash(cb) {
       <li><button data-nav-target="home" onclick="goPage('home')">Home</button></li>
       <li><button data-nav-target="moto" onclick="goPage('moto')">Motorsport</button></li>
       <li><button data-nav-target="creative" onclick="goPage('creative')">Creative</button></li>
+      <li><button data-nav-target="retouch" onclick="goPage('retouch')">Retouch</button></li>
       <li><button class="active" data-nav-target="auto" onclick="goPage('auto')">Automobile</button></li>
       <li><button class="nav-contact" onclick="gotoS('au-contact')">Contact</button></li>
     </ul>
@@ -3804,12 +4451,182 @@ if(document.readyState === 'loading'){
   setTimeout(startOpeningSequence, 40);
 }
 
+function escapeHtml(value){
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function sanitizeCreditUrl(url){
+  var trimmed = (url || '').trim();
+  if(!trimmed) return '';
+  if(/^https?:\/\//i.test(trimmed)) return trimmed;
+  return '';
+}
+
+function renderCreditName(name, url){
+  var safeName = escapeHtml((name || '').trim());
+  if(!safeName) return '';
+  var safeUrl = sanitizeCreditUrl(url);
+  if(safeUrl){
+    return '<a class="credit-link" href="' + escapeHtml(safeUrl) + '" target="_blank" rel="noreferrer noopener">' + safeName + '</a>';
+  }
+  return '<span class="credit-name">' + safeName + '</span>';
+}
+
+function formatCreditText(photo, edit){
+  var photoName = (photo || '').trim();
+  var editName = (edit || '').trim();
+  if(photoName && editName){
+    if(photoName.toLowerCase() === editName.toLowerCase()){
+      return 'Photo + Edit by ' + editName;
+    }
+    return 'Photo by ' + photoName + ' / Edit by ' + editName;
+  }
+  if(photoName) return 'Photo by ' + photoName;
+  if(editName) return 'Edit by ' + editName;
+  return 'Photo + Edit by Benihin';
+}
+
+function formatCreditHtml(photo, photoUrl, edit, editUrl){
+  var photoName = (photo || '').trim();
+  var editName = (edit || '').trim();
+  if(photoName && editName){
+    if(photoName.toLowerCase() === editName.toLowerCase()){
+      return 'Photo + Edit by ' + renderCreditName(editName, editUrl || photoUrl);
+    }
+    return 'Photo by ' + renderCreditName(photoName, photoUrl) + ' / Edit by ' + renderCreditName(editName, editUrl);
+  }
+  if(photoName) return 'Photo by ' + renderCreditName(photoName, photoUrl);
+  if(editName) return 'Edit by ' + renderCreditName(editName, editUrl);
+  return 'Photo + Edit by ' + renderCreditName('Benihin', '');
+}
+
+function getCreditText(node){
+  if(!node) return 'Photo + Edit by Benihin';
+  var explicit = node.getAttribute('data-credit');
+  if(explicit && explicit.trim()) return explicit.trim();
+  return formatCreditText(
+    node.getAttribute('data-credit-photo'),
+    node.getAttribute('data-credit-edit')
+  );
+}
+
+function getCreditHtml(node){
+  if(!node) return 'Photo + Edit by ' + renderCreditName('Benihin', '');
+  var explicit = node.getAttribute('data-credit');
+  if(explicit && explicit.trim()){
+    return '<span class="credit-name">' + escapeHtml(explicit.trim()) + '</span>';
+  }
+  return formatCreditHtml(
+    node.getAttribute('data-credit-photo'),
+    node.getAttribute('data-credit-photo-url'),
+    node.getAttribute('data-credit-edit'),
+    node.getAttribute('data-credit-edit-url')
+  );
+}
+
+function applyGalleryCredits(){
+  toArray(document.querySelectorAll('.gal .gi')).forEach(function(card){
+    var badge = card.querySelector('.gi-credit');
+    if(badge) badge.remove();
+  });
+
+  toArray(document.querySelectorAll('.fr-track .fr-item')).forEach(function(card){
+    var info = card.querySelector('.fr-item-info');
+    if(!info) return;
+    var label = info.querySelector('.fr-credit');
+    if(label) label.remove();
+  });
+}
+
+function applyRetouchCredits(){
+  toArray(document.querySelectorAll('.retouch-case')).forEach(function(caseCard){
+    var credit = caseCard.querySelector('.retouch-credits');
+    if(credit) credit.innerHTML = getCreditHtml(caseCard);
+  });
+}
+
+function setRetouchSplit(stage, value){
+  var clamped = Math.max(0, Math.min(100, value));
+  stage.style.setProperty('--split', clamped.toFixed(2) + '%');
+  stage.setAttribute('aria-valuenow', String(Math.round(clamped)));
+}
+
+function bindRetouchStage(stage){
+  if(!stage || stage.dataset.bound === '1') return;
+  stage.dataset.bound = '1';
+  setRetouchSplit(stage, 50);
+
+  function updateFromClientX(clientX){
+    var rect = stage.getBoundingClientRect();
+    if(!rect.width) return;
+    var next = ((clientX - rect.left) / rect.width) * 100;
+    setRetouchSplit(stage, next);
+  }
+
+  function endDrag(e){
+    stage.classList.remove('is-dragging');
+    if(
+      e &&
+      stage.releasePointerCapture &&
+      stage.hasPointerCapture &&
+      stage.hasPointerCapture(e.pointerId)
+    ){
+      stage.releasePointerCapture(e.pointerId);
+    }
+  }
+
+  stage.addEventListener('pointerdown', function(e){
+    stage.classList.add('is-dragging');
+    if(stage.setPointerCapture) stage.setPointerCapture(e.pointerId);
+    updateFromClientX(e.clientX);
+  });
+
+  stage.addEventListener('pointermove', function(e){
+    if(stage.classList.contains('is-dragging')){
+      updateFromClientX(e.clientX);
+    }
+  });
+
+  stage.addEventListener('pointerup', endDrag);
+  stage.addEventListener('pointercancel', endDrag);
+
+  stage.addEventListener('keydown', function(e){
+    var current = parseFloat(stage.getAttribute('aria-valuenow') || '50');
+    if(e.key === 'ArrowLeft'){
+      e.preventDefault();
+      setRetouchSplit(stage, current - 4);
+    }else if(e.key === 'ArrowRight'){
+      e.preventDefault();
+      setRetouchSplit(stage, current + 4);
+    }else if(e.key === 'Home'){
+      e.preventDefault();
+      setRetouchSplit(stage, 0);
+    }else if(e.key === 'End'){
+      e.preventDefault();
+      setRetouchSplit(stage, 100);
+    }
+  });
+}
+
+function initRetouchCompare(){
+  toArray(document.querySelectorAll('.retouch-stage')).forEach(bindRetouchStage);
+}
+
+applyGalleryCredits();
+applyRetouchCredits();
+initRetouchCompare();
+
 /* â”€â”€ LIGHTBOX â”€â”€ */
 var lbItems=[], lbIdx=0;
 var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img'), lbCap=document.getElementById('lb-cap');
 function lbOpen(src,cap,items,idx){
   lbItems=items||[]; lbIdx=idx||0;
-  lbImg.src=src; lbCap.textContent=cap||'';
+  lbImg.src=src; lbCap.innerHTML=cap||'';
   lb.classList.add('open'); document.body.style.overflow='hidden';
 }
 function lbClose(){
@@ -3822,7 +4639,7 @@ function lbNav(dir){
   lbImg.style.opacity='0';
   setTimeout(function(){
     lbImg.src=lbItems[lbIdx].src;
-    lbCap.textContent=lbItems[lbIdx].cap||'';
+    lbCap.innerHTML=lbItems[lbIdx].cap||'';
     lbImg.style.opacity='1';
   }, 220);
 }
@@ -3841,13 +4658,17 @@ function buildLightboxItem(card){
   if(!img) return null;
   var title = card.querySelector('.gi-title,.fr-item-title');
   var sub = card.querySelector('.gi-sub,.fr-item-sub');
+  var parts = [];
+  if(title && title.textContent) parts.push('<span class="credit-name">' + escapeHtml(title.textContent.trim()) + '</span>');
+  if(sub && sub.textContent) parts.push('<span class="credit-name">' + escapeHtml(sub.textContent.trim()) + '</span>');
   return {
     src: img.src,
-    cap: (title ? title.textContent : '') + (sub ? ' Â· ' + sub.textContent : '')
+    cap: parts.join(' <span class="lb-cap-sep">/</span> ')
   };
 }
 
 document.addEventListener('click', function(e){
+  if(e.target.closest('.credit-link')) return;
   var card = e.target.closest('.gal .gi, .fr-track .fr-item');
   if(!card || card.classList.contains('anime-feature')) return;
   var container = card.closest('.gal, .fr-track');
